@@ -80,7 +80,7 @@ public class AuthListener {
     LoginInboundConnection inboundConnection = (LoginInboundConnection) inbound;
     InitialInboundConnection initialInbound = (InitialInboundConnection) DELEGATE_FIELD.invokeExact(inboundConnection);
     MinecraftConnection connection = initialInbound.getConnection();
-    InitialLoginSessionHandler handler = (InitialLoginSessionHandler) connection.getSessionHandler();
+    InitialLoginSessionHandler handler = (InitialLoginSessionHandler) connection.getActiveSessionHandler();
 
     ServerLogin packet = (ServerLogin) LOGIN_FIELD.invokeExact(handler);
     if (packet == null) {

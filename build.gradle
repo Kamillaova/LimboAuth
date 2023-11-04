@@ -68,6 +68,10 @@ dependencies {
     compileOnly("com.github.spotbugs:spotbugs-annotations:$spotbugsVersion")
 }
 
+dependencyLocking {
+    lockAllConfigurations()
+}
+
 shadowJar {
     getArchiveClassifier().set("")
 
